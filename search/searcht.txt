@@ -1,0 +1,70 @@
+package search
+
+import "fmt"
+func Print() {
+	fmt.Println("just so it doesn't complain about importing fmt")
+}
+
+
+// Given an unsorted array, return true if d exists
+// in the array, false otherwise.
+// worst time complexity: O(n)
+func LinearUnsortedSearch(v []int, d int) bool {
+	return false
+}
+
+// Given an sorted array, return true if d exists
+// in the array, false otherwise.
+// worst time complexity: O(n)
+func LinearSortedSearch(v []int, d int) bool {
+	return false
+}
+
+// Given an sorted array, return true if d exists
+// in the array, false otherwise.
+// worst time complexity: O(log n)
+func BynarySearch(v []int, d int) bool {
+	return false
+}
+
+func FibonacciSearch(v []int, d int) bool {
+	return false
+}
+
+// Write a metod that will return the sum of all the integer
+// array elements given array as an input argument
+func SumArrayItems(v []int) int {
+	return 0
+}
+
+// given an usorted list of n elements,
+// find teh first element which is repeated
+// without sorting the array.
+func firstrepeated(v []int) int {
+	return 0
+}
+
+// Given an array of n numbers,
+// return the duplicate elements in the array
+func FindDups(v []int) []int {
+
+	return []int{}
+}
+
+// Given an array of n numbers,
+// return the duplicate elements in the array
+func FindDupsSorting(v []int) []int {
+	return []int{}
+}
+
+// Remove Dups from Array.
+// TC: O(n), SC: O(1)
+func RemoveDups(data []int) []int {
+	return []int{}
+}
+
+// Remove Dups without Sorting
+// TC: O(n), SC: O(n)
+func RemoveDupsMap(v []int) []int {
+	return []int{}
+}

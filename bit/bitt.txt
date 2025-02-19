@@ -1,0 +1,72 @@
+package bit
+
+import "fmt"
+
+func Print() {
+	fmt.Println("just so it doesn't complain about importing fmt")
+}
+
+func And(a, b int) int {
+	return 0
+}
+
+func Or(a, b int) int {
+	return 0
+}
+
+func Xor(a, b int) int {
+	return 0
+}
+
+// divide an integer by 2 without using the / operator
+func DivideBy2(x int) int {
+	return 0
+}
+
+// multiply by 8 without using the multiplication operator.
+func MultiplyBy8(x int) int {
+	return 0
+	}
+
+// Once complement of a number
+func OnceComplement(a int) int {
+	return 0
+}
+
+func TwoComplement(a int) int {
+	return 0
+}
+
+/*
+Subtract 5 -3 Bynary using two's complement.
+*/
+
+/*
+Multiply 5 -3 Bynary using two's complement.
+*/
+
+
+//Check if Kth Bit is set
+func KthBitCheck(a, k int) bool {
+	return false
+}
+
+// Set the Kth bit in a number
+func KthBitSet(a, k int) int {
+	return 0
+}
+
+//Reset the Kth bit in a number
+func KthBitReset(a, k int) int {
+	return 0
+	}
+
+//Find if a number is a power of 2
+func IsPowerOf2(a int) bool {
+	return false
+}
+
+//Count the set bits in a number
+func CountBits(a int) int {
+	return 0
+}

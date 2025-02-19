@@ -1,0 +1,124 @@
+package sort
+import "fmt"
+// import "math"
+
+func Print() {
+	fmt.Println("just so it doesn't complain about importing fmt")
+}
+
+
+// TC: O(n^2)
+// SC:O(1)
+func BubbleSort(v []int) {
+}
+
+// TC: O(n^2)
+// SC:O(1)
+// technique: move forward in the outer loop and check for greater values backwards in the inner loop.
+func InsertionSort(v []int) {
+}
+
+// TC: O(n^2)
+// SC:O(1)
+func SelectionSort(v []int) {
+}
+
+// TC: O(nlog n)
+// SC: O(n)
+func MergeSort(v []int) {
+}
+
+// Avg TC: O(n log n)
+// WTC: O(n^2)
+// Best SC:O(log n)
+// WSC: O(n)
+func QuickSort(v []int) {
+}
+
+
+// TC: O(n + k)
+// SC: O(n + k)
+func CountSort(v []int, lr, ur int) {
+}
+
+// TC: O(n *d) where d is the number of digits in the largest number in the array
+// SC: O(n + k) where k is the range of the range of the input. for base 10, k = 10
+func RadixSort(v []int) {
+}
+
+// Avg TC: O(n log n)
+// W TC: O (n^2)
+// SC: O(1)
+func ShellSort(v []int) {
+}
+
+// Avg TC: O(n + k) where k is the number of buckets
+// Worst TC: O(n^2)
+// SC: O(n + k)
+func BucketSort(v []int) {
+}
+
+func Partition01Sort(v []int) {
+}
+
+func Partition012Sort(v []int) {
+}
+
+func MinSwaps(v []int, k int) int {
+	return 0
+}
+
+// sort the array so that the even numbers are at the front followed by the odd numbers
+func EvenOdd(v []int) {
+}
+
+// given two sorted arrays, sort the values of both
+// so that one has the least values, the other one has the greater ones
+func SortArrays(v1, v2 []int) {
+}
+
+// create two arrays one with the union of all the values and another
+// one with the intersection of them
+// Time complexity O(n+m)
+func UnionIntersect(v1, v2 []int) ([]int, []int) {
+	vi := []int{}
+	vu := []int{}
+	return vu, vi
+}
+
+func CheckReverse(v []int) bool {
+	return true
+}
+
+// rotate array up to k places
+// Time complexity O(n)
+func RotateArray(v []int, k int) {
+}
+
+// given an unsorted array whose first value may be 0, and missing values at a given index is -1,
+// sort the index
+func IndexZeroSort(v []int) {
+}
+
+// given an unsorted array whose first value is 1, sort the array
+func IndexOneToNSort(v []int) {
+}
+
+// given an ascending sorted array, rearange so that
+// the parttern follows a max,min sort.
+// example: given the array [1,2,3,4,5,6,7]
+// the output should be [7,1,6,2,5,3,4]
+// time complexity is O(n^2), but a space commplexity of O(1)
+func MaxMinSort(v []int) {
+}
+
+// the following version has a time complexity of O(n),
+// but also has a space complexity of O(n)
+func MaxMinSortON(v []int) {
+}
+
+// find the max circular sum for the given array
+func MaxCircularSum(v []int) int {
+	mcs := 0
+	return mcs
+}
