@@ -169,3 +169,29 @@ func TestRemoveDupsMap(t *testing.T) {
 		t.Errorf("invalid item found. expected %v, but got %v.", exv, vr[0])
 	}
 }
+
+func TestMissingNumber(t *testing.T) {
+	v := []int{1, 10, 3, 9, 4, 8, 5, 7, 6}
+	en := 2
+	n, m := FindMissingNumber(v)
+	if n != en {
+		t.Errorf("invalid missing number. expected number %v, but got %v", en, n)
+	}
+	em := true
+	if m != em {
+		t.Errorf("invalid missing assertion. expected %v, but got %v", em, m)
+	}
+}
+
+func TestMissingNumberMap(t *testing.T) {
+	v := []int{1, 10, 3, 9, 4, 8, 5, 7, 6}
+	en := 2
+	n, m := FindMissingNumberMap(v)
+	if n != en {
+		t.Errorf("invalid missing number. expected number %v, but got %v", en, n)
+	}
+	em := true
+	if m != em {
+		t.Errorf("invalid missing assertion. expected %v, but got %v", em, m)
+	}
+}

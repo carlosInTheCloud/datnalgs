@@ -5,7 +5,6 @@ func Print() {
 	fmt.Println("just so it doesn't complain about importing fmt")
 }
 
-
 // Given an unsorted array, return true if d exists
 // in the array, false otherwise.
 // worst time complexity: O(n)
@@ -67,4 +66,16 @@ func RemoveDups(data []int) []int {
 // TC: O(n), SC: O(n)
 func RemoveDupsMap(v []int) []int {
 	return []int{}
+}
+
+// Given an array with values that start at 1, find the missing number.
+// TC: O(n.log(n)), SC: O(n) if using merge sort.
+func FindMissingNumber(v []int) (int, bool) {
+	return 0, false
+}
+
+// find missing number using a map.
+// TC: O(n), SC: O(n)
+func FindMissingNumberMap(v []int) (int, bool) {
+	return 0, false
 }

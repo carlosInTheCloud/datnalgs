@@ -1,5 +1,14 @@
 package search
 
+import (
+	"fmt"
+	"sort"
+)
+
+func Print() {
+	fmt.Println("just so it doesn't complain about importing fmt")
+}
+
 // Given an unsorted array, return true if d exists
 // in the array, false otherwise.
 // worst time complexity: O(n)
@@ -34,6 +43,7 @@ func BynarySearch(v []int, d int) bool {
 	s := len(v)
 	l := 0
 	u := s - 1
+
 	for l < u {
 		i := (l + u) / 2
 		if v[i] > d {
@@ -46,15 +56,15 @@ func BynarySearch(v []int, d int) bool {
 	}
 	return false
 }
-
 // Given an sorted array, return true if d exists
 // in the array, false otherwise. Use the fibonacci algorithm.
 // worst time complexity: O(log n)
 func FibonacciSearch(v []int, d int) bool {
-	s := len(v)
+	s := len(v) - 1
+	f := 1
 	f1 := 1
 	f2 := 0
-	f := f1 + f2
+
 	for f < s {
 		f2 = f1
 		f1 = f
@@ -62,7 +72,7 @@ func FibonacciSearch(v []int, d int) bool {
 	}
 	l := 0
 	for f > 1 {
-		i := min(l+f2, s-1)
+		i := min(f2+l, s-1)
 		if v[i] == d {
 			return true
 		} else if v[i] < d {
@@ -76,11 +86,13 @@ func FibonacciSearch(v []int, d int) bool {
 			f2 = f - f1
 		}
 	}
-	if v[l+f2] == d {
+	if v[f2+l] == d {
 		return true
 	}
+
 	return false
 }
+
 // Write a metod that will return the sum of all the integer
 // array elements given array as an input argument
 func SumArrayItems(v []int) int {
@@ -90,10 +102,11 @@ func SumArrayItems(v []int) int {
 	}
 	return t
 }
+
 // given an usorted list of n elements,
 // find teh first element which is repeated
 // without sorting the array.
-func firstrepeated(v []int) int {
+func FirstRepeated(v []int) int {
 	s := len(v)
 	hm := make(map[int]int)
 	for i := 0; i < s; i++ {
@@ -104,8 +117,8 @@ func firstrepeated(v []int) int {
 			hm[v[i]] = 1
 		}
 	}
-	for k, v := range hm {
-		if v > 1 {
+	for k, x := range hm {
+		if x > 1 {
 			return k
 		}
 	}
@@ -183,4 +196,80 @@ func RemoveDupsMap(v []int) []int {
 		i++
 	}
 	return keys
+}
+
+// Given an array with values that start at 1, find the missing number.
+// TC: O(n.log(n)), SC: O(n) if using merge sort.
+func FindMissingNumber(v []int) (int, bool) {
+	s := len(v)
+	mergeSort(v)
+	for i := 0; i < s; i++ {
+		if v[i] != i+1 {
+			return i + 1, true
+		}
+	}
+	return 0, false
+}
+
+func mergeSort(v []int) {
+	s := len(v)
+	vt := make([]int, s)
+	mergeDivide(v, vt, 0, s-1)
+}
+
+func mergeDivide(v, vt []int, l, u int) {
+	if l >= u {
+		return
+	}
+	m := (l + u) / 2
+	mergeDivide(v, vt, l, m)
+	mergeDivide(v, vt, m+1, u)
+	mergeConquer(v, vt, l, m, u)
+}
+func mergeConquer(v, vt []int, l, m, u int) {
+	ls := l
+	us := m + 1
+	c := l
+
+	for ls <= m && us <= u {
+		if v[ls] <= v[us] {
+			vt[c] = v[ls]
+			ls++
+		} else {
+			vt[c] = v[us]
+			us++
+		}
+		c++
+	}
+	for ls <= m {
+		vt[c] = v[ls]
+		ls++
+		c++
+	}
+	for us <= u {
+		vt[c] = v[us]
+		us++
+		c++
+	}
+	for i := l; i <= u; i++ {
+		v[i] = vt[i]
+	}
+}
+
+// find missing number using a map.
+// TC: O(n), SC: O(n)
+func FindMissingNumberMap(v []int) (int, bool) {
+	m := make(map[int]int)
+	for _, x := range v {
+		m[x] = 1
+	}
+	s := len(v)
+	for i := 1; i <= s; i++ {
+		_, ok := m[i]
+		if !ok {
+
+			return i, true
+		}
+	}
+	return 0, false
 }
