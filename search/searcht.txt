@@ -36,13 +36,6 @@ func SumArrayItems(v []int) int {
 	return 0
 }
 
-// given an usorted list of n elements,
-// find teh first element which is repeated
-// without sorting the array.
-func firstrepeated(v []int) int {
-	return 0
-}
-
 // Given an array of n numbers,
 // return the duplicate elements in the array
 func FindDups(v []int) []int {
@@ -77,5 +70,11 @@ func FindMissingNumber(v []int) (int, bool) {
 // find missing number using a map.
 // TC: O(n), SC: O(n)
 func FindMissingNumberMap(v []int) (int, bool) {
+	return 0, false
+}
+
+// find missing number using Sumation strategy.
+// TC: O(n), SC: O(1)
+func FindMissingNumberSum(v []int) (int, bool) {
 	return 0, false
 }

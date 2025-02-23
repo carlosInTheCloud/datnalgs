@@ -103,28 +103,6 @@ func SumArrayItems(v []int) int {
 	return t
 }
 
-// given an usorted list of n elements,
-// find teh first element which is repeated
-// without sorting the array.
-func FirstRepeated(v []int) int {
-	s := len(v)
-	hm := make(map[int]int)
-	for i := 0; i < s; i++ {
-		_, exists := hm[v[i]]
-		if exists {
-			hm[v[i]] = hm[v[i]] + 1
-		} else {
-			hm[v[i]] = 1
-		}
-	}
-	for k, x := range hm {
-		if x > 1 {
-			return k
-		}
-	}
-	return 0
-}
-
 // Given an array of n numbers,
 // return the duplicate elements in the array
 func FindDups(v []int) []int {
@@ -162,7 +140,7 @@ func FindDupsSorting(v []int) []int {
 }
 
 // Remove Dups from Array.
-// TC: O(n), SC: O(1)
+// TC: O(n log n), SC: O(n)
 func RemoveDups(data []int) []int {
 	size := len(data)
 	sort.Ints(data)
@@ -270,6 +248,25 @@ func FindMissingNumberMap(v []int) (int, bool) {
 
 			return i, true
 		}
+	}
+	return 0, false
+}
+
+// find missing number using Sumation strategy.
+// TC: O(n), SC: O(1)
+func FindMissingNumberSum(v []int) (int, bool) {
+	s := len(v)
+	sum := 0
+	t := 0
+	for i := 1; i <= s+1; i++ {
+		sum += i
+		if i <= s {
+			t += v[i-1]
+		}
+	}
+	r := sum - t
+	if r > 0 {
+		return r, true
 	}
 	return 0, false
 }
