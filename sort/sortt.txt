@@ -87,7 +87,7 @@ func UnionIntersect(v1, v2 []int) ([]int, []int) {
 }
 
 func CheckReverse(v []int) bool {
-	return true
+	return false
 }
 
 // rotate array up to k places

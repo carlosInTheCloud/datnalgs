@@ -163,39 +163,30 @@ func CountSort(v []int, lr, ur int) {
 // SC: O(n + k) where k is the range of the range of the input. for base 10, k = 10
 func RadixSort(v []int) {
 	s := len(v)
-	//find max
-	m := v[0]
-	for i := 1; i < s; i++ {
-		if m < v[i] {
-			m = v[i]
+	mx := v[0]
+	for _, x := range v {
+		if mx < x {
+			mx = x
 		}
 	}
-
-	for d := 1; m/d > 0; d *= 10 {
-		radixCountSort(v, s, d)
+	for d := 1; mx/d > 0; d *= 10 {
+		radixSorter(v, s, d)
 	}
 }
-func radixCountSort(v []int, s, d int) {
+
+func radixSorter(v []int, s, d int) {
 	vt := make([]int, s)
-
-	for i := range v {
-		vt[i] = v[i]
-	}
-	//sttore vc of occurences in vc array
-	//(number/dividend)%10 is used to find the working digit
+	copy(vt, v[:])
 	vc := make([]int, 10)
-
 	for i := 0; i < s; i++ {
 		vc[(vt[i]/d)%10]++
 	}
-	//change count[i] so that count[i] contains number of elemetns till index i in output
 	for i := 1; i < 10; i++ {
 		vc[i] += vc[i-1]
 	}
-	//copy content to input arr
 	for i := s - 1; i >= 0; i-- {
 		v[vc[(vt[i]/d)%10]-1] = vt[i]
-		vc[(vt[i]/d)%10] -= 1
+		vc[(vt[i]/d)%10]--
 	}
 }
 

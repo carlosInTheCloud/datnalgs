@@ -183,7 +183,7 @@ func TestUnionIntersect(t *testing.T) {
 }
 
 func TestCheckReverse(t *testing.T) {
-	v := []int{1, 3, 8, 5, 4, 3, 10, 11, 12, 18, 28}
+	v := []int{1, 2, 8, 5, 4, 3, 10, 11, 12, 18, 28}
 	chxr := CheckReverse(v)
 
 	if !chxr {
@@ -191,6 +191,14 @@ func TestCheckReverse(t *testing.T) {
 	}
 }
 
+func TestCheckReverseShouldReturnFalse(t *testing.T) {
+	v := []int{1, 2, 8, 5, 4, 10, 3, 11, 12, 18, 28}
+	chxr := CheckReverse(v)
+
+	if chxr {
+		t.Error("Expected fale but got true")
+	}
+}
 func TestRotateArray(t *testing.T) {
 	v := []int{1, 2, 3, 4, 5, 6}
 	RotateArray(v, 2)
