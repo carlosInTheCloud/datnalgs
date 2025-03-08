@@ -38,13 +38,16 @@ func SumArrayItems(v []int) int {
 
 // Given an array of n numbers,
 // return the duplicate elements in the array
-func FindDups(v []int) []int {
+// Use a map
+//TC:O(n), SC:O(n)
+func FindDupsMap(v []int) []int {
 
 	return []int{}
 }
 
 // Given an array of n numbers,
 // return the duplicate elements in the array
+//TC: O(nlogn), SC: O(n)
 func FindDupsSorting(v []int) []int {
 	return []int{}
 }

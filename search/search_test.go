@@ -80,12 +80,13 @@ func TestSumArrayItems(t *testing.T) {
 
 func TestFindDups(t *testing.T) {
 	v := []int{1, 3, 5, 7, 9, 7, 25, 21, 30}
-	vr := FindDups(v)
+	vr := FindDupsMap(v)
 	exl := 1
 	if len(vr) != exl {
 		t.Errorf("Invalid array size. Expected %v, but got %v.", exl, len(vr))
 	}
 	exv := 7
+	t.Log("vr:", vr)
 	if vr[0] != exv {
 		t.Errorf("Invalid duplicate value. Expected %v, but got %v.", exv, vr[0])
 	}
@@ -136,6 +137,7 @@ func TestRemoveDups(t *testing.T) {
 func TestRemoveDupsMap(t *testing.T) {
 	v := []int{1, 3, 5, 3, 9, 1, 30}
 	vr := RemoveDupsMap(v)
+	sort(vr)
 	exl := 5
 	if len(vr) != exl {
 		t.Errorf("Invalid array size. Expected %v, but got %v.", exl, len(vr))
