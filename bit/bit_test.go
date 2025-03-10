@@ -147,3 +147,12 @@ func TestBitCount(t *testing.T) {
 		t.Errorf("Error while counting the bits set in %v. Expected %v, but got %v", a, ex, r)
 	}
 }
+
+func TestFindOddValue(t *testing.T) {
+	v := []int{1, 2, 3, 1, 2, 3, 4, 5, 6, 7, 5, 6, 7}
+	o := FindOddValue(v)
+	ex := 4
+	if o != ex {
+		t.Logf("invalid odd value. Expected %v, but got %v", ex, o)
+	}
+}

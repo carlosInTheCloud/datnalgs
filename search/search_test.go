@@ -204,3 +204,12 @@ func TestMissingNumberSum(t *testing.T) {
 		t.Errorf("invalid missing assertion. expected %v, but got %v", em, m)
 	}
 }
+
+func TestFindOddValueMap(t *testing.T) {
+	v := []int{1, 2, 3, 1, 2, 3, 4, 5, 6, 7, 5, 6, 7}
+	o := FindOddValueMap(v)
+	ex := 4
+	if o != ex {
+		t.Logf("invalid odd value. Expected %v, but got %v", ex, o)
+	}
+}

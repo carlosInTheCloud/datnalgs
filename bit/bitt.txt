@@ -70,3 +70,10 @@ func IsPowerOf2(a int) bool {
 func CountBits(a int) int {
 	return 0
 }
+
+// In an array in which all elements in the array are repeated an even number of times except one, find the
+// element of the array that is repeated an odd number of times.
+// TC: O(n), SC: O(i)
+func FindOddValue(v []int) int {
+	return 0
+}

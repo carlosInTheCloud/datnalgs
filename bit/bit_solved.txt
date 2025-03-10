@@ -110,4 +110,13 @@ func CountBits(a int) int {
 	return c
 }
 
-
+// In an array in which all elements in the array are repeated an even number of times except one, find the
+// element of the array that is repeated an odd number of times.
+// TC: O(n), SC: O(i)
+func FindOddValue(v []int) int {
+	t := 0
+	for _, x := range v {
+		t ^= x
+	}
+	return t
+}

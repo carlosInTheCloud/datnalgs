@@ -95,3 +95,16 @@ func FindMissingNumberMap(v []int) (int, bool) {
 func FindMissingNumberSum(v []int) (int, bool) {
 	return 0, false
 }
+// In an array in which all elements in the array are repeated an even number of times except one, find the
+// element of the array that is repeated an odd number of times.
+// TC: O(n), SC: O(n)
+func FindOddValueMap(v []int) int {
+	return 0
+}
+
+// Given an array which may contain repeated values, find the distinct sum of the elements.
+//Use a hash table
+// TC: O(n), SC: O(1)
+func SumDistinctMap(v []int) int {
+	return 0
+}
