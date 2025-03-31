@@ -5,6 +5,20 @@ func Print() {
 	fmt.Println("just so it doesn't complain about importing fmt")
 }
 
+func sort(v []int) {
+	s := len(v) - 1
+	swap := true
+	for i := 0; i < s && swap; i++ {
+		swap = false
+		for j := 0; j < s-i; j++ {
+			if v[j] > v[j+1] {
+				v[j], v[j+1] = v[j+1], v[j]
+				swap = true
+			}
+		}
+	}
+}
+
 // Given an unsorted array, return true if d exists
 // in the array, false otherwise.
 // worst time complexity: O(n)

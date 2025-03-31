@@ -137,7 +137,7 @@ func TestRemoveDups(t *testing.T) {
 func TestRemoveDupsMap(t *testing.T) {
 	v := []int{1, 3, 5, 3, 9, 1, 30}
 	vr := RemoveDupsMap(v)
-	sort(vr)
+	testSorter(vr)
 	exl := 5
 	if len(vr) != exl {
 		t.Errorf("Invalid array size. Expected %v, but got %v.", exl, len(vr))

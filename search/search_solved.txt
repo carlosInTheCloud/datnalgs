@@ -127,7 +127,7 @@ func FindDupsMap(v []int) []int {
 // return the duplicate elements in the array
 TC: O(n), SC: O(n)
 func FindDupsSorting(v []int) []int {
-	sort.Ints(v)
+	sort(v)
 	vd := []int{}
 	s := len(v) - 1
 	for i := 0; i < s; i++ {
